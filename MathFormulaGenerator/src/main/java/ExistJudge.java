@@ -7,8 +7,8 @@ public class ExistJudge {
         if (allExpression.isEmpty()) return false;
 
         for (Expression existingExpression : allExpression) {
-            if (!compareResult(expression, existingExpression)) continue;
             if (!compareNumberCount(expression, existingExpression)) continue;
+            if (!compareResult(expression, existingExpression)) continue;
             if (!compareAllOperatorFix(expression, existingExpression)) continue;
             if (!compareAllNumberFix(expression, existingExpression)) continue;
             // 如果所有条件都相同，说明表达式已存在
