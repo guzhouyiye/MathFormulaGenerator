@@ -86,7 +86,7 @@ public class Expression {
         allOperatorFix = new ArrayList<>(allOperator);
     }
 
-    // 生成括号
+    // 随机生成括号
     private void generateBracket(){
         // 括号个数0或1
         if(numberCount > 2 && random.nextBoolean()) {

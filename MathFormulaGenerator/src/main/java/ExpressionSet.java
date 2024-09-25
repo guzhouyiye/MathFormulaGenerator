@@ -47,7 +47,7 @@ public class ExpressionSet {
     // 运算式写入运算式字符串
     private void expressionsWrite(StringBuilder expressionsString, Expression expression, int i) {
         expressionsString.append(i + 1).append(". ");
-        // 括号（）：同个位置进行判断：（）数字 符号
+        //同个位置判断顺序：'(' 运算数 运算符 ')'
         // 左右括号判断（0左1右）
         int judgeBracket = 0;
         for (int j = 0; j < expression.numberCount; j++) {

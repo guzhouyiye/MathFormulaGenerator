@@ -21,6 +21,9 @@ public class CommandLineParser {
     // 获取生成题目的数量
     public int getQuestionCount() {
         if (argumentMap.containsKey("-n")) {
+            if (Integer.parseInt(argumentMap.get("-n")) < 0) {
+                throw new IllegalArgumentException("参数 -n 必须为非负整数");
+            }
             return Integer.parseInt(argumentMap.get("-n"));
         } else {
             throw new IllegalArgumentException("参数 -n 未指定");
@@ -30,6 +33,9 @@ public class CommandLineParser {
     // 获取数值范围
     public int getRange() {
         if (argumentMap.containsKey("-r")) {
+            if (Integer.parseInt(argumentMap.get("-r")) < 0) {
+                throw new IllegalArgumentException("参数 -r 必须为非负整数");
+            }
             return Integer.parseInt(argumentMap.get("-r"));
         } else {
             throw new IllegalArgumentException("参数 -r 未指定");

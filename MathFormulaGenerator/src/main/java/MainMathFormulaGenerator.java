@@ -6,8 +6,11 @@ public class MainMathFormulaGenerator {
         // 读取参数，根据参数进行不同操作
         CommandLineParser parser = new CommandLineParser(args);
 
+        if (args.length < 4) {
+            System.out.println("缺少参数");
+        }
         // -n -r 参数组合
-        if (parser.hasNParam() && parser.hasRParam()) {
+        else if (parser.hasNParam() && parser.hasRParam()) {
             // 读取 -n 和 -r 所对应的参数
             int questionCount = parser.getQuestionCount();
             int range = parser.getRange();
